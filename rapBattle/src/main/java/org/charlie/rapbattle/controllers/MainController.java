@@ -12,4 +12,11 @@ public class MainController {
     public String home() {
         return "redirect:/main"; //VER SE ISTO FICA CORRECTO
     }
+
+    @RequestMapping(method = RequestMethod.GET, value="room/{id}")
+    public String room() {
+        return "room";
+    }
 }
+
+
