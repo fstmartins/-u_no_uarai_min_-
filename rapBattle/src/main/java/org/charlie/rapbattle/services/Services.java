@@ -4,7 +4,7 @@ import org.charlie.rapbattle.model.User;
 
 public interface Services {
 
-    User getUser(Integer id);
+
 
 
 }
