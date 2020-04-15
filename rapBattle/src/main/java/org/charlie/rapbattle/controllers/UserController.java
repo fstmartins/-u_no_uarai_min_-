@@ -3,6 +3,7 @@ package org.charlie.rapbattle.controllers;
 import org.charlie.rapbattle.model.User;
 import org.charlie.rapbattle.persistance.UserDao;
 import org.charlie.rapbattle.services.UserServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,6 +40,7 @@ public class UserController {
         return userServices;
     }
 
+    @Autowired
     public void setUserServices(UserServices userServices) {
         this.userServices = userServices;
     }
@@ -47,6 +49,7 @@ public class UserController {
         return userDao;
     }
 
+    @Autowired
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
     }

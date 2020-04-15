@@ -11,9 +11,9 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-//@Controller
+@Controller
 public class GetUser {
-/*
+
     private EntityManager em;
 
     @PersistenceContext
@@ -21,7 +21,7 @@ public class GetUser {
         this.em = em;
     }
 
-    @RequestMapping(method = RequestMethod.GET, value="/get")
+    @RequestMapping(method = RequestMethod.GET, value="/gets")
     public String showLoginPage(Model model){
 
         CriteriaQuery<User> criteriaQuery = em.getCriteriaBuilder().createQuery(User.class);
@@ -30,5 +30,5 @@ public class GetUser {
         model.addAttribute("users",em.createQuery(criteriaQuery).getResultList());
         return "get_users";
     }
-*/
+
 }
