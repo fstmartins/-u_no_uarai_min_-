@@ -23,9 +23,9 @@ public class UserServices implements Services {
     }
 
 
-
-    //GETTERS AND SETTERS
-
+    /**
+     * Getters and setters
+     */
 
     public JpaUserDao getUserDao() {
         return userDao;
