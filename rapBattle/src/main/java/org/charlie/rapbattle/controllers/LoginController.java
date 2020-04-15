@@ -19,16 +19,11 @@ public class LoginController {
 
     @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
     public String getIndexPage() {
-        return "index";
+        return "login";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/register")
     public String register() {
         return "add";
-    }
-
-    @RequestMapping(method = RequestMethod.GET, path = "/login")
-    public String login() {
-        return "login";
     }
 }
