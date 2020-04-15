@@ -41,5 +41,8 @@ public abstract class GenericDao<T> implements Dao<T>{
         return em.find(modelType, id);
     }
 
-
+    @Override
+    public T saveOrUpdate(T modelObject) {
+        return em.merge(modelObject);
+    }
 }

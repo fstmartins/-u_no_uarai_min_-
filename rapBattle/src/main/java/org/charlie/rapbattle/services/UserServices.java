@@ -25,6 +25,9 @@ public class UserServices implements Services {
         return user.getBattlesWon();
     }
 
+    public void addUser(User user) {
+        userDao.saveOrUpdate(user);
+    }
 
     /**
      * Getters and setters
