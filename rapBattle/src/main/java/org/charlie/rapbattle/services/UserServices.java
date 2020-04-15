@@ -2,11 +2,11 @@ package org.charlie.rapbattle.services;
 
 import org.charlie.rapbattle.exceptions.UserNotFoundException;
 import org.charlie.rapbattle.model.User;
-import org.charlie.rapbattle.persistance.jpa.JpaUserDao;
+import org.charlie.rapbattle.persistance.UserDao;
 
 public class UserServices implements Services {
 
-    private JpaUserDao userDao;
+    private UserDao userDao;
 
     public User getUser(Integer id){
         return userDao.findById(id);
@@ -19,7 +19,7 @@ public class UserServices implements Services {
             throw new UserNotFoundException();
         }
 
-        return userDao.getRating(id);
+        return user.getBattlesWon();
     }
 
 
@@ -27,11 +27,11 @@ public class UserServices implements Services {
      * Getters and setters
      */
 
-    public JpaUserDao getUserDao() {
+    public UserDao getUserDao() {
         return userDao;
     }
 
-    public void setUserDao(JpaUserDao userDao) {
+    public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
     }
 }

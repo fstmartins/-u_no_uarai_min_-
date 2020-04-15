@@ -11,9 +11,9 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-@Controller
+//@Controller
 public class GetUser {
-
+/*
     private EntityManager em;
 
     @PersistenceContext
@@ -28,7 +28,7 @@ public class GetUser {
         Root<User> root = criteriaQuery.from(User.class);
 
         model.addAttribute("users",em.createQuery(criteriaQuery).getResultList());
-        return "get_user";
+        return "get_users";
     }
-
+*/
 }
