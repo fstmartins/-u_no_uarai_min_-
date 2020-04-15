@@ -6,6 +6,8 @@ import org.charlie.rapbattle.persistance.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserServices implements Services {
 
@@ -23,6 +25,10 @@ public class UserServices implements Services {
         }
 
         return user.getBattlesWon();
+    }
+
+    public List<User> listAll(){
+        return userDao.findAll();
     }
 
 

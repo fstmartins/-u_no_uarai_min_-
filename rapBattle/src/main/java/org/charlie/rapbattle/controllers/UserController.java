@@ -17,11 +17,10 @@ import javax.persistence.criteria.Root;
 public class UserController {
 
     private UserServices userServices;
-    private UserDao userDao;
 
     @RequestMapping(method = RequestMethod.GET, value="/get")
     public String getUsers(Model model){
-        model.addAttribute("users",userDao.findAll());
+        model.addAttribute("users",userServices.listAll());
         return "get_users";
     }
 
@@ -45,12 +44,4 @@ public class UserController {
         this.userServices = userServices;
     }
 
-    public UserDao getUserDao() {
-        return userDao;
-    }
-
-    @Autowired
-    public void setUserDao(UserDao userDao) {
-        this.userDao = userDao;
-    }
 }
