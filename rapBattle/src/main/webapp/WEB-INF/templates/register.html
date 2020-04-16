@@ -20,6 +20,7 @@
                   <input type="password" placeholder="Confirm password" id="confirmPassword" name="confirmPassword">
                   <button type="submit" id="register" name="register"> Register</button>
                   <p class="message">Already have account? <a href="login.html">Back to login</a></p>
+                  <p id="confirmationMessage" name="confirmationMessage" th:text="${customer.firstName}"></p>
                 </form>
             </div>
         </div>

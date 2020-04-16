@@ -1,6 +1,8 @@
 package org.charlie.rapbattle.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "User")
@@ -9,11 +11,21 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Email(message = "Please provide a valid e-mail")
+    @NotEmpty(message = "Please provide an e-mail")
     private String email;
+
+    @NotEmpty(message = "Please provide your first name")
     private String firstName;
+
+    @NotEmpty(message = "Please provide your last name")
     private String lastName;
+
+    @NotEmpty(message = "Please provide your password")
     private String password;
     private int battlesWon;
+
 
     public String getEmail() {
         return email;
