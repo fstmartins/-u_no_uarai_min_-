@@ -4,6 +4,7 @@ import org.charlie.rapbattle.model.User;
 import org.charlie.rapbattle.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,32 +31,33 @@ public class LoginController {
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/register")
-    public String register() {
+    public String register(Model model) {
+        model.addAttribute("user",new User());
         return "register";
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public ModelAndView processRegistrationForm(ModelAndView modelAndView, @Valid User user, BindingResult bindingResult) {
 
-        // Lookup user in database by e-mail
-       /*User userExists = userService.findByEmail(user.getEmail());
+
+       User userExists = userService.findByEmail(user.getEmail());
 
         if (userExists != null) {
-            modelAndView.addObject("alreadyRegisteredMessage",
-                    "Oops!  There is already a user registered with the email provided.");
             modelAndView.setViewName("register");
-            bindingResult.reject("email");
-        }
-*/
-
-        if (bindingResult.hasErrors()) {
+            modelAndView.addObject("noMatchPassword",
+                    "Yo broda! We already have this email, choose other!");
+        }else if (bindingResult.hasErrors()) {
             modelAndView.setViewName("register");
-        } else { // new user so we create user and send confirmation e-mail
-
+            modelAndView.addObject("noMatchPassword",
+                    "Yo broda! This shit is bugged af");
+        }else if(!user.getPassword().equals(user.getConfirmPassword())) {
+            modelAndView.addObject("noMatchPassword",
+                    "Yo broda! Your passwords don't match!");
+            modelAndView.setViewName("register");
+        } else {
             userService.saveUser(user);
-
-            modelAndView.addObject("confirmationMessage",
-                    "User registered with success");
+            modelAndView.addObject("infoMessage",
+                    "Yo broda! You are in, just like last night ehehe ;)!");
             modelAndView.setViewName("register");
         }
 
@@ -66,16 +68,20 @@ public class LoginController {
     public ModelAndView login(ModelAndView modelAndView, @Valid User user, BindingResult bindingResult) {
         User dbUser = userService.findByEmail(user.getEmail());
 
-        if(dbUser == null || bindingResult.hasErrors()) {
+        if(dbUser == null) {
+            modelAndView.addObject("infoMessage",
+                    "Yo broda this email doesn't exist, register please");
             modelAndView.setViewName("login");
             return modelAndView;
         }
 
         if(user.getPassword().equals(dbUser.getPassword())) {
-           modelAndView.setViewName("user");
+           modelAndView.setViewName("mainpage-test");
            return modelAndView;
         }
 
+        modelAndView.addObject("infoMessage",
+                "Yo broda! Are u tryin to hack someone? Wrong password");
         modelAndView.setViewName("login");
         return modelAndView;
     }
