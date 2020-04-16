@@ -24,6 +24,6 @@ public class LoginController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/register")
     public String register() {
-        return "add";
+        return "register";
     }
 }
