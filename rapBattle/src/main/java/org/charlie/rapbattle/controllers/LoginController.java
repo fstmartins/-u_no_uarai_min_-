@@ -69,6 +69,8 @@ public class LoginController {
         User dbUser = userService.findByEmail(user.getEmail());
 
         if(dbUser == null) {
+            modelAndView.addObject("infoMessage",
+                    "Yo broda this email doesn't exist, register please");
             modelAndView.setViewName("login");
             return modelAndView;
         }
@@ -78,6 +80,8 @@ public class LoginController {
            return modelAndView;
         }
 
+        modelAndView.addObject("infoMessage",
+                "Yo broda! Are u tryin to hack someone? Wrong password");
         modelAndView.setViewName("login");
         return modelAndView;
     }
