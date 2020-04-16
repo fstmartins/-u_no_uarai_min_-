@@ -10,4 +10,7 @@ public class UserDao extends GenericDao<User>{
         super(User.class);
     }
 
+    public User findByEmail(String email) {
+        return em.find(User.class, email);
+    }
 }

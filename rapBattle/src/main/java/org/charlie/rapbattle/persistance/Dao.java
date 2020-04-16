@@ -10,7 +10,7 @@ public interface Dao<T> {
 
     T findById(Integer id);
 
-   // T saveOrUpdate(T modelObject);
+    T saveOrUpdate(T modelObject);
 
   //  void delete(Integer id);
 }
