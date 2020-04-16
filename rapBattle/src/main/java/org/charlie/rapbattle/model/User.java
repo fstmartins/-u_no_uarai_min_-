@@ -9,9 +9,6 @@ import javax.validation.constraints.NotEmpty;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
     @Email(message = "Please provide a valid e-mail")
     @NotEmpty(message = "Please provide an e-mail")
     private String email;
@@ -65,13 +62,5 @@ public class User {
 
     public void setBattlesWon(int battlesWon) {
         this.battlesWon = battlesWon;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 }
