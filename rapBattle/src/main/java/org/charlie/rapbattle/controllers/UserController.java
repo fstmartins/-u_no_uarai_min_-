@@ -2,7 +2,7 @@ package org.charlie.rapbattle.controllers;
 
 import org.charlie.rapbattle.model.User;
 import org.charlie.rapbattle.persistance.UserDao;
-import org.charlie.rapbattle.services.UserServices;
+import org.charlie.rapbattle.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,14 +10,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
-
 @Controller
 @RequestMapping("/user")
 public class UserController {
 
-    private UserServices userServices;
+    private UserService userService;
     private UserDao userDao;
 
     @RequestMapping(method = RequestMethod.GET, value="/get")
@@ -28,7 +25,7 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.POST, path = {"/", ""})
     public String addUser(@ModelAttribute("user") User user) {
-        userServices.addUser(user);
+        userService.saveUser(user);
 
         return "redirect:/";
     }
@@ -37,13 +34,13 @@ public class UserController {
      * Getters and Setters
      */
 
-    public UserServices getUserServices() {
-        return userServices;
+    public UserService getUserService() {
+        return userService;
     }
 
     @Autowired
-    public void setUserServices(UserServices userServices) {
-        this.userServices = userServices;
+    public void setUserService(UserService userService) {
+        this.userService = userService;
     }
 
     public UserDao getUserDao() {

@@ -5,14 +5,19 @@ import org.charlie.rapbattle.model.User;
 import org.charlie.rapbattle.persistance.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class UserServices implements Services {
+public class UserService implements Services {
 
     private UserDao userDao;
 
     public User getUser(Integer id){
         return userDao.findById(id);
+    }
+
+    public User findByEmail(String email){
+        return userDao.findByEmail(email);
     }
 
     public double getRating(Integer id) throws UserNotFoundException {
@@ -25,7 +30,13 @@ public class UserServices implements Services {
         return user.getBattlesWon();
     }
 
+    @Transactional
     public void addUser(User user) {
+        userDao.saveOrUpdate(user);
+    }
+
+    @Transactional
+    public void saveUser(User user){
         userDao.saveOrUpdate(user);
     }
 
