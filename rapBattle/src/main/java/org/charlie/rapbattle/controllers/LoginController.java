@@ -68,13 +68,13 @@ public class LoginController {
     public ModelAndView login(ModelAndView modelAndView, @Valid User user, BindingResult bindingResult) {
         User dbUser = userService.findByEmail(user.getEmail());
 
-        if(dbUser == null || bindingResult.hasErrors()) {
+        if(dbUser == null) {
             modelAndView.setViewName("login");
             return modelAndView;
         }
 
         if(user.getPassword().equals(dbUser.getPassword())) {
-           modelAndView.setViewName("user");
+           modelAndView.setViewName("mainpage-test");
            return modelAndView;
         }
 
