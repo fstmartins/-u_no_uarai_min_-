@@ -17,7 +17,7 @@ public class LoginController {
         this.userServices = userServices;
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
+    @RequestMapping(method = RequestMethod.GET, path = {"/", "","/login"})
     public String getIndexPage() {
         return "login";
     }

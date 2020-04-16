@@ -99,7 +99,7 @@ body {
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image: url("resources/rap-background.jpg");     
+    background-image: url("../rap-background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 
