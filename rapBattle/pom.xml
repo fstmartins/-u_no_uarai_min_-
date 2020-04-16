@@ -110,22 +110,10 @@
         <version>3.0.4.RELEASE</version>
     </dependency>
 
-        <dependency>
-            <groupId>javax.websocket</groupId>
-            <artifactId>javax.websocket-api</artifactId>
-            <version>1.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.github.sarxos</groupId>
-            <artifactId>webcam-capture</artifactId>
-            <version>0.3.10</version>
-        </dependency>
-
     </dependencies>
 
     <build>
-        <finalName>Java Bank</finalName>
+        <finalName>Rap Battle</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
