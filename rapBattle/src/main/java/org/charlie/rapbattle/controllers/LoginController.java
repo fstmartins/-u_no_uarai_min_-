@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.naming.Binding;
 import javax.validation.Valid;
 
 @Controller
@@ -23,7 +24,7 @@ public class LoginController {
         this.userService = userService;
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/", "","/login"})
+    @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
     public String getIndexPage() {
         return "login";
     }
@@ -58,6 +59,24 @@ public class LoginController {
             modelAndView.setViewName("register");
         }
 
+        return modelAndView;
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/login")
+    public ModelAndView login(ModelAndView modelAndView, @Valid User user, BindingResult bindingResult) {
+        User dbUser = userService.findByEmail(user.getEmail());
+
+        if(dbUser == null || bindingResult.hasErrors()) {
+            modelAndView.setViewName("login");
+            return modelAndView;
+        }
+
+        if(user.getPassword().equals(dbUser.getPassword())) {
+           modelAndView.setViewName("user");
+           return modelAndView;
+        }
+
+        modelAndView.setViewName("login");
         return modelAndView;
     }
 
