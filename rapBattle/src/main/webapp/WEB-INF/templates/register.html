@@ -1,26 +1,44 @@
-<html xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 
   <head>
-      <link rel="stylesheet" href="resources/css/login.css">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <thymeleaf th:replace="header :: header" />
   </head>
 
   <div class="login-page">
       <div class="wrap">
             <div class="form">
-                <form class="form-horizontal" th:object="${user}" th:action="@{'/register'}" method="post">
-                  <input type="text" placeholder="First Name" id="firstName" name="firstName">
-                  <input type="text" placeholder="Last Name" id="lastName" name="lastName">
-                  <input type="text" placeholder="Email" id="email" name="email">
-                  <input type="password" placeholder="Password" id="password" name="password">
-                  <input type="password" placeholder="Confirm password" id="confirmPassword" name="confirmPassword">
-                  <button type="submit" id="register" name="register"> Register</button>
-                  <p class="message">Already have account? <a href="login.html">Back to login</a></p>
-                  <p id="confirmationMessage" name="confirmationMessage" th:text="${customer.firstName}"></p>
+                <form class="form-horizontal" th:object="${user}" th:action="@{/register}" method="post">
+
+                    <div>
+                        <span class="help-block" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" style="color:red">First name error messages</span>
+                        <input type="text" placeholder="First Name" id="firstName" name="firstName" th:field="*{firstName}" />
+                    </div>
+
+                    <div>
+                        <span class="help-block" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" style="color:red">Last name error messages</span>
+                        <input type="text" placeholder="Last Name" id="lastName" name="lastName" th:field="*{lastName}" />
+                    </div>
+
+                    <div>
+                        <span class="help-block" th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color:red">Email error messages</span>
+                        <input type="text" placeholder="Email" id="email" name="email" th:field="*{email}" />
+                    </div>
+
+                    <div>
+                        <span class="help-block" th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color:red">Password Name error messages</span>
+                        <input type="password" placeholder="Password" id="password" name="password" th:field="*{password}" />
+                    </div>
+
+                   <div>
+                        <span class="help-block" th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{password}" style="color:red">Password Name error messages</span>
+                        <input type="password" placeholder="Confirm password" id="confirmPassword" name="confirmPassword" th:field="*{confirmPassword}" />
+                    </div>
+
+                    <button type="submit" id="register" name="register"> Register</button>
+                    <p class="message">Already have account? <a href="login.html">Back to login</a></p>
+                    <label class="help-block" th:if="${#fields.hasGlobalErrors()}")>Yo dude! your form has errors!</label>
+                    <label style="color:green" th:text="${infoMessage}"></label>
+                    <label style="color:red" th:text="${noMatchPassword}"></label>
                 </form>
             </div>
         </div>
