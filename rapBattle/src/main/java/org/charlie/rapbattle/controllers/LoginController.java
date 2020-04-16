@@ -24,7 +24,7 @@ public class LoginController {
         this.userService = userService;
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
+    @RequestMapping(method = RequestMethod.GET, path = {"/", "", "/login"})
     public String getIndexPage() {
         return "login";
     }
@@ -62,7 +62,7 @@ public class LoginController {
         return modelAndView;
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/login")
+    @RequestMapping(method = RequestMethod.GET, path = "/doLogin")
     public ModelAndView login(ModelAndView modelAndView, @Valid User user, BindingResult bindingResult) {
         User dbUser = userService.findByEmail(user.getEmail());
 

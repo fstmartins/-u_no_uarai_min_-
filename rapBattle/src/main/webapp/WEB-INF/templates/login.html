@@ -12,7 +12,7 @@
     <div class="login-page">
         <div class="wrap">
             <div class="form">
-                <form class="form-horizontal" th:object="${user}" th:action="@{'/register'}" method="post">
+                <form class="form-horizontal" th:object="${user}" th:action="@{'/getPage'}" method="get">
                     <input type="text" placeholder="Email" id="email" name="email">
                     <input type="password" placeholder="Password" id="password" name="password">
                     <button type="submit" id="login" name="login">Log In </button>
