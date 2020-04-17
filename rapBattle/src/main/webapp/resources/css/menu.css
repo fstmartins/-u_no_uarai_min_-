@@ -1,0 +1,54 @@
+body {
+    background: -webkit-linear-gradient(right,  #76b852, #3366FF);
+    background: -moz-linear-gradient(right, #76b852, #3366FF);
+    background: -o-linear-gradient(right, #76b852, #3366FF);
+    background: linear-gradient(to left, #76b852, #3366FF);
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: url("../background1.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#TitleContainer{
+    background-color: black;
+}
+
+.songTitle{
+    color: white;
+    font-family: Cattino;
+    font-size: 30;
+    font-weight: bold;
+}
+
+h1{
+    color: white;
+    text-align: center;
+    font-family: "Funkrocker";
+}
+
+#eminem{
+    height: 30%;
+}
+
+#fiftyCent{
+    height: 30%;
+}
+
+#sandrim{
+    height: 30%;
+}
+
+#rappers{
+     justify-content: center;
+}
+
+img{
+    opacity: 0.7;
+}
+
+img:hover{
+    opacity: 1;
+}
+
