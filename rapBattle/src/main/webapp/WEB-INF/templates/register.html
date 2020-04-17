@@ -4,6 +4,7 @@
       <thymeleaf th:replace="header :: header" />
   </head>
 
+  <body>
   <div class="login-page">
       <div class="wrap">
             <div class="form">
@@ -34,7 +35,7 @@
                         <input type="password" placeholder="Confirm password" id="confirmPassword" name="confirmPassword" th:field="*{confirmPassword}" />
                     </div>
 
-                    <button type="submit" id="register" name="register"> Register</button>
+                    <button type="submit" id="register" name="register"> JOIN US BRODA! </button>
                     <p class="message">Already have account? <a href="login.html">Back to login</a></p>
                     <label class="help-block" th:if="${#fields.hasGlobalErrors()}")>Yo dude! your form has errors!</label>
                     <label style="color:green" th:text="${infoMessage}"></label>
@@ -42,4 +43,11 @@
                 </form>
             </div>
         </div>
-  </div>
+    </div>
+  </body>
+  <style>
+      body{
+          background-image: url("resources/background.jpg");
+      }
+  </style>
+</html>

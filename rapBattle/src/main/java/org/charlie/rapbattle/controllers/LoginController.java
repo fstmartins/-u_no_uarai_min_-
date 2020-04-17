@@ -49,7 +49,7 @@ public class LoginController {
         }else if (bindingResult.hasErrors()) {
             modelAndView.setViewName("register");
             modelAndView.addObject("noMatchPassword",
-                    "Yo broda! This shit is bugged af");
+                    "Yo broda! The form has errors! You know what I mean?");
         }else if(!user.getPassword().equals(user.getConfirmPassword())) {
             modelAndView.addObject("noMatchPassword",
                     "Yo broda! Your passwords don't match!");
