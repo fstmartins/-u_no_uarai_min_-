@@ -59,7 +59,7 @@
 </head>
 <body>
 <div>
-    <h1 style="font-family: 'Permanent Marker', cursive; text-align: center; color: white; margin: 35px">RAP ALONG SANDRO G</h1>
+    <h1 style="font-family: 'Permanent Marker', cursive; text-align: center; color: white; margin: 35px">RAP ALONG 50 CENT</h1>
 </div>
 <div style="margin: auto; display: table" class="webcam1">
     <div class="videos">
@@ -68,11 +68,10 @@
             <video id="vid2" controls></video>
         </div>
 
-        <iframe id="video2" width="560" height="315" src="https://www.youtube.com/embed/eG7wAzut6Zw"
+        <iframe id="video2" width="560" height="315" src="https://player.vimeo.com/video/408674449"
                 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
     </div>
-    <script src="javascript/web.js"></script>
     <button style="margin: 2px" type="button" class="btn btn-success" id="start">Start Recording</button>
     <button style="margin: 2px" type="button" class="btn btn-danger" id="stop">Stop Recording</button>
 </div>
@@ -89,7 +88,71 @@
     <a href="https://www.twitter.com/" target="_blank">
     <img src="../../resources/twitter-btn.png" style="max-width: 5%; margin: 15px">
     </a>
-    <br><button th:href="@{/main/}" type="button" class="btn btn-light">Home Page</button>
+    <br><a th:href="@{/main/}" type="button" class="btn btn-light">Home Page</a>
+    <script>
+        var constraintObj = {
+            audio: {
+                echoCancellation: true,
+                noiseSuppression: true,
+                sampleRate: 44100
+            },
+            video: true
+        }
+
+        navigator.mediaDevices.getUserMedia(constraintObj)
+            .then(function(mediaStreamObj) {
+                var video = document.querySelector('video');
+                if ("srcObject" in video) {
+                    video.srcObject = mediaStreamObj;
+                }
+
+                video.onloadedmetadata = function(ev) {
+                    video.play();
+                };
+
+                var start = document.getElementById('start');
+                var stop = document.getElementById('stop');
+                var vidSave = document.getElementById('vid2');
+                var vid2div = document.getElementById('vid2-div');
+                vid2div.style.display = "none";
+
+                var recorder = new MediaRecorder(mediaStreamObj);
+                var chunks = [];
+
+                start.addEventListener('click', (ev)=> {
+                    recorder.start();
+                var vid1 = document.getElementById('video1');
+                vid2div.style.display = "none";
+                vid1.style.display = "inline";
+            })
+
+                stop.addEventListener('click', (ev)=> {
+                    recorder.stop();
+                vid2div.style.display = "inline";
+                var vid1 = document.getElementById('video1')
+                if(vid1.style.display === "none") {
+                    vid1.style.display = "inline";
+                } else {
+                    vid1.style.display = "none";
+                }
+            })
+
+                recorder.ondataavailable = function(ev) {
+                    chunks.push(ev.data);
+                }
+
+                recorder.onstop = (ev) => {
+                    var blob = new Blob(chunks, {'type' : 'video/mp4'});
+                    chunks = [];
+                    var videoURL = window.URL.createObjectURL(blob);
+                    vidSave.src = videoURL;
+                }
+            })
+            .catch(function(err){
+                console.log(err.name, err.message);
+            });
+    </script>
 </div>
+
 </body>
 </html>
