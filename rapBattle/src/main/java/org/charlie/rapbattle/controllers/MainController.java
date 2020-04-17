@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/main")
 public class MainController {
 
-    @RequestMapping(method = RequestMethod.GET, value="/")
+    @RequestMapping(method = RequestMethod.GET, path={"/", ""})
     public String home() {
         return "mainpage"; //VER SE ISTO FICA CORRECTO
     }
