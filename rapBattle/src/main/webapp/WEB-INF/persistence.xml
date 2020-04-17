@@ -79,7 +79,7 @@
             <map>
                 <entry key="hibernate.dialect" value="org.hibernate.dialect.PostgresPlusDialect"/>
                 <!-- Run as create once to initialize the schema -->
-                <entry key="hibernate.hbm2ddl.auto" value="create"/>
+                <entry key="hibernate.hbm2ddl.auto" value="update"/>
             </map>
         </property>
     </bean>
