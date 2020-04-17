@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.charlie.rapbattle</groupId>
-    <artifactId>rapBattle</artifactId>
+    <artifactId>rapbattle</artifactId>
     <version>1.0-SNAPSHOT</version>
     <!-- say that its a war project -->
     <packaging>war</packaging>
-    <name>RapBattle</name>
+    <name>rapbattle</name>
 
     <dependencies>
         <dependency>
