@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rap Battle</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../../resources/css/login.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        #video1 {
+            background-color: black;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #video2 {
+            width: 630px;
+            height: 480px;
+            background-color: black;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #share {
+            color: white;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-image: url("../../resources/crowd.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <h1 style="font-family: 'Permanent Marker', cursive; text-align: center; color: white; margin: 35px">RAP ALONG EMINEM</h1>
+</div>
+<div style="margin: auto; display: table" class="webcam1">
+    <div class="videos">
+        <video id="video1" controls></video>
+        <div id="vid2-div">
+            <video id="vid2" controls></video>
+        </div>
+
+        <iframe id="video2" width="560" height="315" src="https://player.vimeo.com/video/408672216"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+    </div>
+    <script src="javascript/web.js"></script>
+    <button style="margin: 2px" type="button" class="btn btn-success" id="start">Start Recording</button>
+    <button style="margin: 2px" type="button" class="btn btn-danger" id="stop">Stop Recording</button>
+</div>
+
+<div style="text-align: center" class="links">
+    <h3 style="font-family: 'Permanent Marker'; margin: 15px" id="share">Share your motherf*cking masterpiece!</h3>
+
+    <a href="https://www.facebook.com/" target="_blank">
+    <img src="../../resources/facebook-btn.png" style="max-width: 5%; margin: 15px">
+    </a>
+    <a href="https://studio.youtube.com/channel/UCt_rdZT99XLR9JwSW0E_B2A/videos/upload?d=ud&filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D" target="_blank">
+    <img src="../../resources/youtube-roundbtn.png" style="max-width: 5%; margin: 15px">
+    </a>
+    <a href="https://www.twitter.com/" target="_blank">
+    <img src="../../resources/twitter-btn.png" style="max-width: 5%; margin: 15px">
+    </a>
+    <br><button type="button" class="btn btn-light">Home Page</button>
+</div>
+<div>
+    
+</div>
+</body>
+</html>
