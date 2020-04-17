@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.naming.Binding;
 import javax.validation.Valid;
 
 @Controller
@@ -64,7 +63,7 @@ public class LoginController {
         return modelAndView;
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/doLogin")
+    @RequestMapping(method = RequestMethod.POST, path = "/doLogin")
     public ModelAndView login(ModelAndView modelAndView, @Valid User user, BindingResult bindingResult) {
         User dbUser = userService.findByEmail(user.getEmail());
 
@@ -76,7 +75,7 @@ public class LoginController {
         }
 
         if(user.getPassword().equals(dbUser.getPassword())) {
-           modelAndView.setViewName("mainpage-test");
+           modelAndView.setViewName("mainpage");
            return modelAndView;
         }
 
