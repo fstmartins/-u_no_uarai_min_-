@@ -11,7 +11,7 @@ public class MainController {
 
     @RequestMapping(method = RequestMethod.GET, value="/")
     public String home() {
-        return "redirect:/main"; //VER SE ISTO FICA CORRECTO
+        return "mainpage"; //VER SE ISTO FICA CORRECTO
     }
 
     @RequestMapping(method = RequestMethod.GET, value="room/{id}")
