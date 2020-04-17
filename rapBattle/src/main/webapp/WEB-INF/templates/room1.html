@@ -4,7 +4,7 @@
     <title>Rap Battle</title>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" href="resources/css/login.css">
+    <link rel="stylesheet" href="../../resources/css/login.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -22,15 +22,13 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<link href="css/style.css" rel="stylesheet">-->
-    <!--620px 470px-->
+
     <style>
         #video1 {
-            width: 630px;
-            height: 480px;
             background-color: black;
             margin-left: auto;
             margin-right: auto;
@@ -44,36 +42,53 @@
             margin-right: auto;
         }
 
+        #share {
+            color: white;
+        }
+
         body {
-            background: -webkit-linear-gradient(right, #76b852, #3366FF);
-            background: -moz-linear-gradient(right, #76b852, #3366FF);
-            background: -o-linear-gradient(right, #76b852, #3366FF);
-            background: linear-gradient(to left, #76b852, #3366FF);
             font-family: "Roboto", sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            background-image: url("/resources/rap-background.jpg");
+            background-image: url("../../resources/rap-background.jpg");
             background-repeat: no-repeat;
             background-size: cover;
         }
-
 
     </style>
 </head>
 <body>
 <div>
-    <h1 style = "font-family: 'Shadows Into Light', cursive; color: #bd0026"  align="center" ><b>
-        YOU VS SANDRO P
-    </b>
-    </h1>
+    <h1 style="font-family: 'Permanent Marker', cursive; text-align: center; color: white; margin: 35px">RAP ALONG SANDRO G</h1>
 </div>
-<div class="webcam1">
-    <video id="video1" autoplay controls></video>
-    <script src="javascript/cam.js"></script>
-    <iframe id="video2" width="560" height="315" src="https://www.youtube.com/embed/wcFjN_pK4Wo?autoplay=1"
-            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-    </video>
+<div style="margin: auto; display: table" class="webcam1">
+    <div class="videos">
+        <video id="video1" controls></video>
+        <div id="vid2-div">
+            <video id="vid2" controls></video>
+        </div>
+
+        <iframe id="video2" width="560" height="315" src="https://www.youtube.com/embed/wcFjN_pK4Wo?autoplay=1"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+    </div>
+    <script src="javascript/web.js"></script>
+    <button style="margin: 2px" type="button" class="btn btn-success" id="start">Start Recording</button>
+    <button style="margin: 2px" type="button" class="btn btn-danger" id="stop">Stop Recording</button>
+</div>
+
+<div style="text-align: center" class="links">
+    <h3 style="font-family: 'Permanent Marker'; margin: 20px" id="share">Share your motherf*cking masterpiece!</h3>
+
+    <a href="https://www.facebook.com/" target="_blank">
+    <img src="../../resources/facebook-btn.png" style="max-width: 5%; margin: 15px">
+    
+    <a href="https://www.youtube.com/" target="_blank">
+    <img src="../../resources/youtube-roundbtn.png" style="max-width: 5%; margin: 15px">
+    
+    <a href="https://www.twitter.com/" target="_blank">
+    <img src="../../resources/twitter-btn.png" style="max-width: 5%; margin: 15px">
+</a>
 </div>
 </body>
 </html>
