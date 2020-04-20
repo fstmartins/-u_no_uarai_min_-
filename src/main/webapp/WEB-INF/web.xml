@@ -4,7 +4,7 @@
                              http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-    <display-name>rapbattle</display-name>
+    <display-name>Java Bank</display-name>
 
     <servlet>
         <servlet-name>dispatcherServlet</servlet-name>
@@ -23,10 +23,10 @@
 
 
     <!-- say which profile is active -->
-    <!--<context-param>
+    <context-param>
         <param-name>spring.profiles.active</param-name>
         <param-value>prod</param-value>
-    </context-param> -->
+    </context-param>
 
 
     <!--

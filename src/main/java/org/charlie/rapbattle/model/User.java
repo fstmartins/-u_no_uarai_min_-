@@ -5,22 +5,28 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
-@Table(name = "User")
+@Table(name = "users")
 public class User {
 
     @Id
+    @Column(name = "email")
     @Email(message = "Please provide a valid e-mail")
     @NotEmpty(message = "Please provide an e-mail")
     private String email;
 
+    @Column(name = "first_name")
     @NotEmpty(message = "Please provide your first name")
     private String firstName;
 
+    @Column(name = "last_name")
     @NotEmpty(message = "Please provide your last name")
     private String lastName;
 
+    @Column(name = "pass")
     @NotEmpty(message = "Please provide your password")
     private String password;
+
+    @Column(name = "battles_won")
     private int battlesWon;
 
     @Transient
