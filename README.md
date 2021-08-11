@@ -8,10 +8,10 @@ Here's the link: https://rapbattles-ac.herokuapp.com/
 
 The Awesome Team Members:
 
-  - Fábio Martins <Oh captain, my captain!_>
-  - Gustavo Mendes <Mad features boy_>
-  - Jaime Reis <Database pro && front-end skillz_>
-  - Miguel Farto <Video && audio editing on demand_>
+  - Fábio Martins #Oh captain, my captain!_
+  - Gustavo Mendes #Mad features boy_
+  - Jaime Reis #Database pro && front-end skillz_
+  - Miguel Farto #Video && audio editing on demand_
   
 ------------------------------------------------------------------------------------------------------------------------------
   
